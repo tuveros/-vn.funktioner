@@ -1,4 +1,3 @@
-
 def meny(): #visa menyn
   print('1. Aritmetiskt summa')
   print('2. Temp.omvandlare, C->F')
@@ -7,32 +6,32 @@ def meny(): #visa menyn
   övn()
 
 # underprogram
-def summa():
-  tal = int(input('Heltal? '))
+def summa(tal):
   for n in range(tal):
     tal = tal + n
-    print(tal, n)
-  övn()
-def temp():
-  C = float(input('Celsius? '))
+  return tal  
+def temp(C):
   F = 1.8 * C + 32
-  print(F)
-  övn()
-def plus():
-  n = int(input ('pos.tal? '))
-  if n <= 0:
-    plus()
-  print(n)
-  övn()
-
+  return F
+def plus(n):
+  return n
+  
 def övn(): # välj underprogram
   val = input('Välj!!!')
   if val == '1': 
-    summa()
+    tal = int(input('Heltal? '))
+    print(summa(tal))
+    övn()
   elif val == '2':
-    temp()
+    t = float(input('Celsius? '))
+    print(temp(t))
+    övn()
   elif val == '3':
-    plus()
+    x=0
+    while x<=0:
+      x = int(input('pos.tal? '))
+    print(plus(x))
+    övn()
   elif val == '4':
     print('Tack & hej!')
   else:
